@@ -30,6 +30,16 @@ class WebFormTest extends BaseTest {
         driver.findElement(By.name("my-textarea")).sendKeys("Two lines");
         assertFalse(driver.findElement(By.name("my-disabled")).isEnabled());
 
+        // drop-down lists and a file
+        Select dropdown =
+                new Select(driver.findElement(By.name("my-select")));
+        dropdown.selectByVisibleText("Two");
+        assertEquals("2", dropdown.getFirstSelectedOption()
+                .getDomProperty("value"));
+        driver.findElement(By.name("my-datalist")).sendKeys("Seattle");
+        String file = new File("pom.xml").getAbsolutePath();
+        driver.findElement(By.name("my-file")).sendKeys(file);
+
         // Add the next part above this line.
     }
 }
