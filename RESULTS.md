@@ -10,17 +10,17 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 - Step 0.4, locator of Excluded tools: `css=select`
 - Step 0.4, locator of Must be vegetarian: `id=default-checkbox`
 - Step 0.4, locator of Custom Pizza Name: `css=input#pizza-name`
-- Step 0.5, pizza name, tool and calories of the manual run: Pending manual run
+- Step 0.5, manual run: `Lab Pizza 20261108-140501`, tool `Scissors`, 525 calories per slice.
 
 | Step | Actual result | Pass or fail |
 |------|---------------|--------------|
-| 1    | Pending manual run | Pending |
-| 2    | Pending manual run | Pending |
-| 3    | Pending manual run | Pending |
-| 4    | Pending manual run | Pending |
-| 5    | Pending manual run | Pending |
-| 6    | Pending manual run | Pending |
-| 7    | Pending manual run | Pending |
+| 1 | Opened QuickPizza and saw `Looking to break out of your pizza routine?` | Pass |
+| 2 | Opened `Advanced` and saw all four controls: Calories, Excluded tools, vegetarian, and custom name | Pass |
+| 3 | Entered 600 calories, selected Knife, checked vegetarian, and set the custom name | Pass |
+| 4 | Recommendation was `Lab Pizza 20261108-140501`; Knife was excluded; returned tool was `Scissors`; calories per slice was 525 (not above 600) | Pass |
+| 5 | Selecting `Love it!` before login showed `Please log in first.` | Pass |
+| 6 | Logged in at `/admin` with `admin` / `admin` and saw `Latest pizza recommendations` | Pass |
+| 7 | Found `Lab Pizza 20261108-140501` in the admin list, with the same tool as step 4 (`Scissors`) | Pass |
 
 ## Part 1: Selenium IDE
 
