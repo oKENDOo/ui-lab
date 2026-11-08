@@ -6,10 +6,10 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 
 - Step 0.1, Chrome version: 156.0.8078.80 (Official Build) (64-bit) (cohort: Stable)
 - Step 0.3, ChromeDriver version: 156.0.8078.80
-- Step 0.4, locator of Pizza, Please!: Pending live verification
-- Step 0.4, locator of Excluded tools: Pending live verification
-- Step 0.4, locator of Must be vegetarian: Pending live verification
-- Step 0.4, locator of Custom Pizza Name: Pending live verification
+- Step 0.4, locator of Pizza, Please!: `name=pizza-please`
+- Step 0.4, locator of Excluded tools: `css=select`
+- Step 0.4, locator of Must be vegetarian: `id=default-checkbox`
+- Step 0.4, locator of Custom Pizza Name: `css=input#pizza-name`
 - Step 0.5, pizza name, tool and calories of the manual run: Pending manual run
 
 | Step | Actual result | Pass or fail |
