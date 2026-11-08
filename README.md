@@ -36,8 +36,8 @@ robot -d results/run1 -v BROWSER:headlesschrome pizza_scenario.robot
 
 ## Part 4 - Cypress
 
-`cypress` contains the configuration, web-form spec, QP-01 spec, and `adminLogin` custom command. Cypress 16.2.1 is installed in the local user cache and one full local run produced the committed videos and screenshots. On Windows systems where PowerShell blocks `npx.ps1`, use:
+`cypress` contains the configuration, web-form spec, QP-01 spec, and `adminLogin` custom command. Run from that folder:
 
 ```powershell
-npx.cmd cypress run --browser chrome
+.\node_modules\.bin\cypress.cmd run --browser chrome
 ```
