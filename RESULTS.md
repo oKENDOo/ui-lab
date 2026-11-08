@@ -50,11 +50,11 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 ## Part 4: Cypress
 
 - `node --version`: `v24.22.1`; `npm --version`: `11.19.1`; Cypress package/binary: `16.2.1`.
-- Step 4.3, failure message for the wrong title: Pending
-- Step 4.6, recorded Cypress QP-01 result: `Lab Pizza 20261108-213840`; returned tool `Scissors`; 475 calories per slice. The test excluded `Knife`, so the returned tool is valid.
-- Step 4.7, recorded Cypress admin-list line: `Lab Pizza 20261108-213840 (tool=Scissors, ingredients_number=7)`.
-- Step 4.8, successful run 1: PASS, 2 specs and 2 tests, 12 s total (`pizza-scenario.cy.js` 10 s; `web-form.cy.js` 2 s). Evidence is committed in `cypress/cypress/videos/` and `cypress/cypress/screenshots/pizza-scenario.cy.js/`.
-- Step 4.8, run 2, result, duration and pizza name: Pending
+- Step 4.3, intentional wrong-title failure: `Timed out retrying after 10000ms`; expected/actual showed `-'Web form'` and `+'Web Form'`. The isolated spec had 1 failing test and took 12 s. The assertion was restored to `Web form` before the final runs.
+- Step 4.6, recorded Cypress QP-01 result from full run 2: `Lab Pizza 20261108-214743`; returned tool `Pizza cutter`; 425 calories per slice. The test excluded `Knife`, so the returned tool is valid and the calories are within the 600 limit.
+- Step 4.7, recorded Cypress admin-list line from full run 2: `Lab Pizza 20261108-214743 (tool=Pizza cutter, ingredients_number=6) (newest)`.
+- Step 4.8, successful run 1: PASS, 2 specs and 2 tests, 12 s total (`pizza-scenario.cy.js` 10 s; `web-form.cy.js` 2 s). Its retained Git-history evidence recorded `Lab Pizza 20261108-213840`.
+- Step 4.8, successful run 2: PASS, 2 specs and 2 tests, 12 s total (`pizza-scenario.cy.js` 10 s; `web-form.cy.js` 2 s), with `Lab Pizza 20261108-214743`. The current committed video and step screenshots are the run-2 evidence.
 - Step 4.9 (optional), browser and result: Not run
 
 ## Part B
