@@ -30,7 +30,7 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 - Step 1.6, changes after recording: used full URLs, replaced the Submit target, added waits/assertions, removed the redundant recorded option click, and completed the 29-command QP-01 customer test.
 - Step 1.6, run 1 pizza name and duration: `Lab Pizza 20261108-205744`, 12.948 s; run 2: `Lab Pizza 20261108-210118`, 7.026 s.
 - Step 1.6, the line Tests: of both runs: `Tests: 2 passed, 2 total`.
-- Step 1.7, one line of QP01customerTest.java that needs rewriting, and why: Pending
+- Step 1.7, `driver.findElement(...).sendKeys("600");` needs a preceding `clear()` because QuickPizza pre-fills the calories box with 1000; otherwise it becomes 1000600. The export also treats the two `${pizzaName}` assertions as literal Java text, so they need rewriting before reuse.
 
 ## Part 2: Selenium WebDriver in Java
 
