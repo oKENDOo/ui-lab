@@ -25,7 +25,7 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 ## Part 1: Selenium IDE
 
 - Firefox version and Node.js version: Firefox 159.0.1; Node.js v24.22.1
-- Step 1.4, intentional `Received` (without `!`) failure: Not recorded separately; the corrected `Received!` assertion passed in both final project runs.
+- Step 1.4, intentional `Received` (without `!`) failure: `Actual value 'Received!' did not match 'Received' during assertText:id=message:Received`; `Tests: 1 failed, 1 passed, 2 total`. The restored `Received!` assertion passed in both final project runs.
 - Step 1.5, Submit target: `xpath=//button[@type='submit']`; the recorded `css=.btn` was fragile because a CSS class can be shared by multiple buttons.
 - Step 1.6, changes after recording: used full URLs, replaced the Submit target, added waits/assertions, removed the redundant recorded option click, and completed the 29-command QP-01 customer test.
 - Step 1.6, run 1 pizza name and duration: `Lab Pizza 20261108-205744`, 12.948 s; run 2: `Lab Pizza 20261108-210118`, 7.026 s.
@@ -51,9 +51,9 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 
 - `node --version`: `v24.22.1`; `npm --version`: `11.19.1`; Cypress package/binary: `16.2.1`.
 - Step 4.3, failure message for the wrong title: Pending
-- Step 4.6, recorded Cypress QP-01 result: `Lab Pizza 20261108-135047`; returned tool `Pizza cutter`; 475 calories per slice. The test excluded `Knife`, so the returned tool is valid.
-- Step 4.7, recorded Cypress admin-list line: `Lab Pizza 20261108-135047 (tool=Pizza cutter, ingredients_number=6) (newest)`.
-- Step 4.8, run 1: Pass (user-confirmed local execution). Evidence is committed in `cypress/cypress/videos/` (one video for each spec) and `cypress/cypress/screenshots/pizza-scenario.cy.js/` (steps 4, 5, and 7). The available artifacts do not contain a reliable total duration, so none is claimed here.
+- Step 4.6, recorded Cypress QP-01 result: `Lab Pizza 20261108-213840`; returned tool `Scissors`; 475 calories per slice. The test excluded `Knife`, so the returned tool is valid.
+- Step 4.7, recorded Cypress admin-list line: `Lab Pizza 20261108-213840 (tool=Scissors, ingredients_number=7)`.
+- Step 4.8, successful run 1: PASS, 2 specs and 2 tests, 12 s total (`pizza-scenario.cy.js` 10 s; `web-form.cy.js` 2 s). Evidence is committed in `cypress/cypress/videos/` and `cypress/cypress/screenshots/pizza-scenario.cy.js/`.
 - Step 4.8, run 2, result, duration and pizza name: Pending
 - Step 4.9 (optional), browser and result: Not run
 
