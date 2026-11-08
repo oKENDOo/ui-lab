@@ -25,11 +25,11 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 ## Part 1: Selenium IDE
 
 - Firefox version and Node.js version: Firefox 159.0.1; Node.js v24.22.1
-- Step 1.4, the line of the failed check and the line Tests:: Pending
-- Step 1.5, target chosen for Submit, and why the recorded one was fragile: Pending
-- Step 1.6, commands changed, added or deleted after recording: Pending
-- Step 1.6, the pizza names of run 1 and run 2: Pending
-- Step 1.6, the line Tests: of both runs: Pending
+- Step 1.4, intentional `Received` (without `!`) failure: Not recorded separately; the corrected `Received!` assertion passed in both final project runs.
+- Step 1.5, Submit target: `xpath=//button[@type='submit']`; the recorded `css=.btn` was fragile because a CSS class can be shared by multiple buttons.
+- Step 1.6, changes after recording: used full URLs, replaced the Submit target, added waits/assertions, removed the redundant recorded option click, and completed the 29-command QP-01 customer test.
+- Step 1.6, run 1 pizza name and duration: `Lab Pizza 20261108-205744`, 12.948 s; run 2: `Lab Pizza 20261108-210118`, 7.026 s.
+- Step 1.6, the line Tests: of both runs: `Tests: 2 passed, 2 total`.
 - Step 1.7, one line of QP01customerTest.java that needs rewriting, and why: Pending
 
 ## Part 2: Selenium WebDriver in Java
