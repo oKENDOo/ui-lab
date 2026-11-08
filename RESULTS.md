@@ -6,11 +6,11 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 
 - Step 0.1, Chrome version: 156.0.8078.80 (Official Build) (64-bit) (cohort: Stable)
 - Step 0.3, ChromeDriver version: 156.0.8078.80
-- Step 0.4, locator of Pizza, Please!: `name=pizza-please`
-- Step 0.4, locator of Excluded tools: `css=select`
-- Step 0.4, locator of Must be vegetarian: `id=default-checkbox`
-- Step 0.4, locator of Custom Pizza Name: `css=input#pizza-name`
-- Step 0.5, manual run: `Lab Pizza 20261108-140501`, tool `Scissors`, 525 calories per slice.
+- Step 0.4, locator of Pizza, Please!: `name=pizza-please` (used by passing Java and Robot QP-01 tests)
+- Step 0.4, locator of Excluded tools: `css=select` (used by passing Java and Robot QP-01 tests)
+- Step 0.4, locator of Must be vegetarian: `id=default-checkbox` (used by passing Java and Robot QP-01 tests)
+- Step 0.4, locator of Custom Pizza Name: `css=input#pizza-name` (used by passing Java and Robot QP-01 tests)
+- Step 0.5, manual run: `Lab Pizza 20261108-140501`, tool `Scissors`, 525 calories per slice. This is a manual UI result, recorded separately from the timestamped automated QP-01 run in Part 4.
 
 | Step | Actual result | Pass or fail |
 |------|---------------|--------------|
@@ -49,20 +49,20 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 
 ## Part 4: Cypress
 
-- node --version, npm --version and npx cypress version: Pending
+- `node --version`: `v24.22.1`; `npm --version`: `11.19.1`; Cypress package/binary: `16.2.1`.
 - Step 4.3, failure message for the wrong title: Pending
-- Step 4.6, tool and calories in the answer of POST /api/pizza: Pending
-- Step 4.7, the line of the admin list that shows your pizza: Pending
-- Step 4.8, run 1, result, duration and pizza name: Pending
+- Step 4.6, recorded Cypress QP-01 result: `Lab Pizza 20261108-135047`; returned tool `Pizza cutter`; 475 calories per slice. The test excluded `Knife`, so the returned tool is valid.
+- Step 4.7, recorded Cypress admin-list line: `Lab Pizza 20261108-135047 (tool=Pizza cutter, ingredients_number=6) (newest)`.
+- Step 4.8, run 1: Pass (user-confirmed local execution). Evidence is committed in `cypress/cypress/videos/` (one video for each spec) and `cypress/cypress/screenshots/pizza-scenario.cy.js/` (steps 4, 5, and 7). The available artifacts do not contain a reliable total duration, so none is claimed here.
 - Step 4.8, run 2, result, duration and pizza name: Pending
 - Step 4.9 (optional), browser and result: Not run
 
 ## Part B
 
-1. Pending completion of test runs.
-2. Pending completion of test runs.
-3. Pending completion of test runs.
-4. Pending completion of test runs.
-5. Pending completion of test runs.
-6. Pending completion of test runs.
-7. Pending completion of test runs.
+1. Max Calories per Slice cannot use `#floating_filled` because it appears on three inputs. A unique id such as `max-calories-per-slice` would prevent tests selecting the wrong field.
+2. Step 7 is a consistency oracle: it compares the tool in the recommendation with the tool in the admin list. It catches a fault where the admin page stores or displays a different tool.
+3. A vegetarian check needs a visible label or API field. Cypress can assert the `vegetarian` response field; a UI-only test needs equivalent page metadata.
+4. Java uses explicit `WebDriverWait`; Robot uses `Wait Until ...` keywords. Both passed QP-01; Robot's HTML log is particularly readable, while Java retains concise screenshots and Surefire output.
+5. Robot Framework is preferred for Project 2: its scenario reads close to the written case, and its resource file centralizes locators/actions. Two full headless runs produced reports, logs, XML, and screenshots.
+6. A changed calories locator requires changes inside QP01Test, but only `HomePage.MAX_CALORIES` for QP01PageObjectTest. Page objects reduce repair scope.
+7. Robot keeps the calories locator in `${MAX CALORIES}` in `resources/quickpizza.resource`; the scenario test file does not need changing.
