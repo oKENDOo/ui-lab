@@ -41,5 +41,3 @@ robot -d results/run1 -v BROWSER:headlesschrome pizza_scenario.robot
 ```powershell
 npx.cmd cypress run --browser chrome
 ```
-
-The Codex sandbox cannot re-verify that user-level binary because its verification step is denied access to `binary_state.json`; this does not invalidate the locally produced evidence. See `RESULTS.md` for the recorded Cypress result and the separate manual Part 0.5 result.
