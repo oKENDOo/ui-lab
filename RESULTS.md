@@ -34,7 +34,7 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 
 ## Part 2: Selenium WebDriver in Java
 
-- Step 2.4, the failure line for the wrong title: Pending
+- Step 2.4, the failure line for the wrong title: `FirstTest.webFormOpens:20 expected: <Web Form> but was: <Web form>`
 - Step 2.15, QP01Test run 1, result and time: Pending
 - Step 2.15, QP01Test run 2, result and time: Pending
 - Step 2.20, full run 1, time and number of tests: Pending
