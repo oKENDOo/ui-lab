@@ -24,7 +24,7 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 
 ## Part 1: Selenium IDE
 
-- Firefox version and Node.js version: Pending
+- Firefox version and Node.js version: Firefox 159.0.1; Node.js v24.22.1
 - Step 1.4, the line of the failed check and the line Tests:: Pending
 - Step 1.5, target chosen for Submit, and why the recorded one was fragile: Pending
 - Step 1.6, commands changed, added or deleted after recording: Pending
