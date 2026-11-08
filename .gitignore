@@ -9,3 +9,9 @@ cypress/cypress/downloads/
 .DS_Store
 .idea/
 .vscode/
+
+# Robot Framework transient output
+robot/output.xml
+robot/log.html
+robot/report.html
+robot/*.png

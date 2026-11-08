@@ -42,8 +42,8 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 
 ## Part 3: Robot Framework
 
-- robot --version: Pending
-- Step 3.2, failure message for the wrong title: Pending
+- robot --version: Robot Framework 7.5.1 (Python 3.15.0 on win32)
+- Step 3.2, failure message for the wrong title: `Title should have been 'Web Form' but was 'Web form'.`
 - Step 3.8, run 1, result, elapsed time and pizza name: Pending
 - Step 3.8, run 2, result, elapsed time and pizza name: Pending
 
