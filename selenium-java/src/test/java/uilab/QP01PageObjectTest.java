@@ -8,6 +8,7 @@ import uilab.pages.AdminPage;
 import uilab.pages.HomePage;
 
 class QP01PageObjectTest extends BaseTest {
+    // Goal: verify QP-01 with page objects from the customer request to the admin list.
     @Test
     void customPizzaReachesTheAdminList() {
         String stamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"));

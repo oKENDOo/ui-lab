@@ -35,17 +35,17 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 ## Part 2: Selenium WebDriver in Java
 
 - Step 2.4, the failure line for the wrong title: `FirstTest.webFormOpens:20 expected: <Web Form> but was: <Web form>`
-- Step 2.15, QP01Test run 1, result and time: Pending
-- Step 2.15, QP01Test run 2, result and time: Pending
-- Step 2.20, full run 1, time and number of tests: Pending
-- Step 2.20, full run 2, time and number of tests: Pending
+- Step 2.15, QP01Test run 1: PASS, 1 test, 11.68 s (Maven total 15.214 s).
+- Step 2.15, QP01Test run 2: PASS, 1 test, 9.056 s (Maven total 12.306 s).
+- Step 2.20, full run 1: PASS, 5 tests, 0 failures and 0 errors; aggregate Surefire test elapsed time 35.364 s.
+- Step 2.20, full run 2: PASS, 5 tests, 0 failures and 0 errors; aggregate Surefire test elapsed time 36.036 s.
 
 ## Part 3: Robot Framework
 
 - robot --version: Robot Framework 7.5.1 (Python 3.15.0 on win32)
 - Step 3.2, failure message for the wrong title: `Title should have been 'Web Form' but was 'Web form'.`
-- Step 3.8, run 1, result, elapsed time and pizza name: Pending
-- Step 3.8, run 2, result, elapsed time and pizza name: Pending
+- Step 3.8, run 1: PASS, 11.029601 s, `Lab Pizza 20261108-132725`.
+- Step 3.8, run 2: PASS, 10.125512 s, `Lab Pizza 20261108-132745`.
 
 ## Part 4: Cypress
 
@@ -59,10 +59,10 @@ Tool parts completed: Part 1 - Selenium IDE, Part 2 - Selenium WebDriver in Java
 
 ## Part B
 
-1. Max Calories per Slice cannot use `#floating_filled` because it appears on three inputs. A unique id such as `max-calories-per-slice` would prevent tests selecting the wrong field.
-2. Step 7 is a consistency oracle: it compares the tool in the recommendation with the tool in the admin list. It catches a fault where the admin page stores or displays a different tool.
-3. A vegetarian check needs a visible label or API field. Cypress can assert the `vegetarian` response field; a UI-only test needs equivalent page metadata.
-4. Java uses explicit `WebDriverWait`; Robot uses `Wait Until ...` keywords. Both passed QP-01; Robot's HTML log is particularly readable, while Java retains concise screenshots and Surefire output.
-5. Robot Framework is preferred for Project 2: its scenario reads close to the written case, and its resource file centralizes locators/actions. Two full headless runs produced reports, logs, XML, and screenshots.
-6. A changed calories locator requires changes inside QP01Test, but only `HomePage.MAX_CALORIES` for QP01PageObjectTest. Page objects reduce repair scope.
-7. Robot keeps the calories locator in `${MAX CALORIES}` in `resources/quickpizza.resource`; the scenario test file does not need changing.
+1. Max Calories per Slice cannot use `#floating_filled` because that id appears on three inputs. The tests therefore locate its label and select the related input. Giving this one input a unique id such as `max-calories-per-slice` would make the locator shorter and prevent a test from selecting the wrong number box.
+2. Step 7 uses a consistency oracle because it compares the tool shown by two different parts of QuickPizza. The recommendation is created by the pizza API, while the admin list is a later stored/displayed representation. This would catch a fault where the admin page saved `Knife` or another incorrect tool even though the customer recommendation showed a different one.
+3. A vegetarian check could assert the `vegetarian` field in the intercepted `/api/pizza` response. The customer page would also need a visible vegetarian label, ingredient metadata, or another stable UI value if the test must stay UI-only. Without one of those sources, QP-01 cannot prove that the recommended ingredients are vegetarian merely from the existing text.
+4. Java waits through explicit `WebDriverWait` conditions, while Robot uses readable `Wait Until ...` keywords inside the resource file. The Java QP01Test passed in 11.68 s and 9.056 s, and the two Robot QP-01 runs passed in 11.029601 s and 10.125512 s. Robot's HTML log is easier to read step by step, while Java's Surefire reports and timestamped screenshots give concise implementation evidence.
+5. Robot Framework is preferred for Project 2 because its scenario reads close to the written QP-01 test case. Its resource file centralizes locators and page actions, so a UI change has a smaller repair scope. The two completed headless runs also produced a report, log, XML result, and screenshots that are easy to review.
+6. A changed calories locator requires edits inside QP01Test wherever that locator occurs. In QP01PageObjectTest, the repair is isolated to `HomePage.MAX_CALORIES`, while the scenario test remains unchanged. This is why page objects reduce the cost and risk of repairing locators after a page change.
+7. Robot keeps the calories locator in `${MAX CALORIES}` in `resources/quickpizza.resource`. The test file calls `Fill In The Pizza Request` and does not repeat the locator. Changing the locator in the resource file therefore repairs every test using that keyword without editing the scenario file.

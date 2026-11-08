@@ -1,4 +1,5 @@
-// QP-01 A custom pizza reaches the admin list.
+// Goal: QP-01 verifies that restrictions survive a pizza request, rating needs login,
+// and the admin list shows the same tool for the new pizza.
 function stamp() { const d = new Date(); const two = n => String(n).padStart(2, '0'); return d.getFullYear() + two(d.getMonth() + 1) + two(d.getDate()) + '-' + two(d.getHours()) + two(d.getMinutes()) + two(d.getSeconds()) }
 describe('QP-01 A custom pizza reaches the admin list', () => {
   it('follows the steps of QP-01', () => {
